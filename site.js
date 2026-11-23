@@ -1,0 +1,4 @@
+(function(){function setL(l){document.documentElement.lang=l;var a=document.getElementById('b-it'),b=document.getElementById('b-en');a.setAttribute('aria-pressed',l==='it');b.setAttribute('aria-pressed',l==='en');try{localStorage.setItem('l',l)}catch(e){}}
+document.getElementById('b-it').onclick=function(){setL('it')};document.getElementById('b-en').onclick=function(){setL('en')};
+var s=(navigator.language||'it').slice(0,2)==='it'?'it':'en';try{s=localStorage.getItem('l')||s}catch(e){}setL(s);
+var cur=document.body.dataset.page;document.querySelectorAll('nav a').forEach(function(a){if((a.dataset.nav||'').split(' ').indexOf(cur)>=0)a.classList.add('on')});})();
